@@ -1,0 +1,6 @@
+<div>
+    <input class="form-check-input" type="checkbox" name="" id="" [(ngModel)]="todoItem.isDone">
+    <span [ngClass]="todoItem.isDone ? 'green':'red'"> {{todoItem.task}} ( {{todoItem.isDone ?
+        'Yapıldı':'Yapılmadı'}})</span>
+
+</div>
