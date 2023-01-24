@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
 import { HttpClientModule } from "@angular/common/http";
 import { DepartmentService } from './services/department.service';
+import { AddDepartmentComponent } from './add-department/add-department.component';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DepartmentService } from './services/department.service';
     ProjectListComponent,
     ProjectComponent,
     TaskListComponent,
-    SearchPipe
+    SearchPipe,
+    AddDepartmentComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,
