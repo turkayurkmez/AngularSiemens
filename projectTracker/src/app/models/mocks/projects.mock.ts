@@ -2,7 +2,7 @@ import { Project } from "../project";
 
 export const projects: Project[] = [
     {
-        id:1, name:'Project X', description:'Description X', startDate:new Date(2023,1,31),
+        id:1, name:'project x', description:'Description X', startDate:new Date(2023,1,31),
         departmentId:1, completedPercent:0.35, 
         tasks:[
             {id:1, name:'Task A - Project X', description:'Task A Description', expectedDate:new Date(2023,2,5),projectId:1, isDone:false },
@@ -12,7 +12,7 @@ export const projects: Project[] = [
         ]
     },
     {
-        id:2, name:'Project Y', description:'Description Y', startDate:new Date(2023,2,28),
+        id:2, name:'pRoJect y', description:'Description Y', startDate:new Date(2023,2,28),
         departmentId:1, completedPercent:0.35, 
         tasks:[
             {id:1, name:'Task A - Project Y', description:'Task A Description', expectedDate:new Date(2023,2,5),projectId:2, isDone:false },
@@ -22,7 +22,7 @@ export const projects: Project[] = [
         ]
     },
     {
-        id:3, name:'Project Z', description:'Description Z', startDate:new Date(2023,1,31),
+        id:3, name:'PROject z', description:'Description Z', startDate:new Date(2023,1,31),
         departmentId:2, completedPercent:0.35, 
         tasks:[
             {id:1, name:'Task A - Project Z', description:'Task A Description', expectedDate:new Date(2023,2,5),projectId:3, isDone:false },

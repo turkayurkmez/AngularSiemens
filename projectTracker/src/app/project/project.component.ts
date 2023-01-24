@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Project } from '../models/project';
 
 @Component({
   selector: 'app-project',
@@ -7,6 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ProjectComponent {
 
-  @Input('currentProject') project:any; 
+  @Input('currentProject') project:Project; 
+  
 
 }

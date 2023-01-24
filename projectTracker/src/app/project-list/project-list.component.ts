@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { projects } from '../models/mocks/projects.mock';
+import { Project } from '../models/project';
 
 @Component({
   selector: 'app-project-list',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent {
-  projects:any = [];
+  projects:Project[]  = projects;
 }
