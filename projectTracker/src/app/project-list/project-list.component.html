@@ -1,4 +1,4 @@
-<input type="text" class="form-control" placeholder="Aranacak kelime">
-<div *ngFor="let project of projects">
+<input type="text" class="form-control" placeholder="Aranacak kelime" [(ngModel)]="searchKey">
+<div *ngFor="let project of projects | search : searchKey">
     <app-project [currentProject]="project"></app-project>
 </div>

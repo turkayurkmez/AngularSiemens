@@ -8,5 +8,6 @@ import { Project } from '../models/project';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent {
+  searchKey: string;
   projects:Project[]  = projects;
 }
