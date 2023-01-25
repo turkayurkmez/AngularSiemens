@@ -1,7 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import { Department } from '../models/department';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Department } from '../models/department';
 export class DepartmentService {
 
   url: string = 'https://localhost:7125/api/Departments';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private userService:UserService) { }
 
   getDepartments(): Observable<Department[]> {
     return this.httpClient.get<Department[]>(this.url)
@@ -24,7 +25,13 @@ export class DepartmentService {
 
   addDepartment(department: Department): Observable<Department> {
 
-    return this.httpClient.post<Department>(this.url, department)
+    let option = {
+      headers: new HttpHeaders({
+        'Authentication':'Bearer ' + this.userService.token
+      })
+    }
+
+    return this.httpClient.post<Department>(this.url, department, option)
       .pipe(tap(data => console.log(data)),
         catchError((err: HttpErrorResponse) => {
           console.log(err);
