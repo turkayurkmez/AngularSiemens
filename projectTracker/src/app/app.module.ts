@@ -14,6 +14,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DepartmentService } from './services/department.service';
 import { AddDepartmentComponent } from './add-department/add-department.component';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
     TaskListComponent,
     SearchPipe,
     AddDepartmentComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
