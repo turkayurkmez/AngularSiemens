@@ -12,22 +12,24 @@ import { ProjectService } from '../services/project.service';
 export class ProjectListComponent implements OnInit {
   searchKey: string;
   allProjects: Project[];
-  projects:Project[];
+  projects: Project[];
 
   constructor(private projectsService: ProjectService, private activeRoute: ActivatedRoute) {
 
   }
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     //aslında en ideal filtreleme rest api'den yapılmalı; yani tıklanan departmanın id'si api'ye gönderilmeli ve api filtrelemeli 
 
-    this.projectsService.getProjects().subscribe(data => {
+    await this.projectsService.getProjects().subscribe(data => {
       this.allProjects = data;
       this.activeRoute.params.subscribe(data => {
         console.log(data['id']);
-        this.projects = data['id'] != undefined ? this.allProjects.filter(p=>p.departmentId == data['id']) 
-                                                : this.allProjects;
+        this.projects = data['id'] != undefined ? this.allProjects.filter(p => p.departmentId == data['id'])
+          : this.allProjects;
       });
-      
+
+
+
 
 
     });
